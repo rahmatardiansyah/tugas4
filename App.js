@@ -1,12 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
+import React, { Component } from 'react';
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -16,6 +8,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button
 } from 'react-native';
 
 import {
@@ -52,6 +45,24 @@ const Section = ({children, title}): Node => {
   );
 };
 
+const Coba = () => {
+  return (
+    <View>
+      <Text>Membuat Component dengan Functional Component (Hooks)</Text>
+    </View>
+  )
+}
+
+class CobaClass extends Component {
+  render(){
+    return (
+      <View>
+        <Button title="coba" />
+      </View>
+    )
+  }
+}
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -62,6 +73,8 @@ const App: () => Node = () => {
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <Coba />
+      <CobaClass />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
